@@ -2,7 +2,11 @@ package spittr;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -13,6 +17,8 @@ import java.util.Date;
  */
 public class Spittle {
     private final Long id;
+    @NonNull
+    @Size(min = 2, max =16)
     private final String message;
     private final Date time;
     private Double latitude;

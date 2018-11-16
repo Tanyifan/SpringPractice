@@ -2,18 +2,17 @@ package spittr.data;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import spittr.Spitter;
 import spittr.Spittle;
-
-import java.util.List;
 
 /**
  * @author TanYf.
  * @project
  * @illu
- * @date 2018/11/13
+ * @date 2018/11/14
  */
 @Component
-public interface SpittleRepository {
-    List<Spittle> findSpittles(long max, int count);
-    Spittle findOne(long spittleId);
+public interface SpitterRepository {
+    Spitter save(Spitter spitter);
+    Spitter findByUsername(String userName);
 }
